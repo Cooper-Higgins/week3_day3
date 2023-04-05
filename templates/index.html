@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>{{title}} - CodeClan Records: All Customer Orders</title>
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+    <div>
+        <header>
+            <h1>CodeClan Records: All Customer Orders</h1>
+        </header>
+        <main>
+        {% for order in orders %}
+        <div>
+            <p>
+                Order ID: {{order.id}} | Order Date: {{order.order_date}} | Revenue: {{order.price}}
+            </p>
+            <a href="{{ url_for('customer_order', id=order.id) }}">View Full Details</a>
+        </div>
+
+        {% endfor %}
+        </main>
+        <footer>
+            <h3> CodeClan Records Ltd 2023 </h3>
+        </footer>
+    </div>
+    </body>
+</html>
