@@ -1,14 +1,16 @@
 <html>
     <head>
         <title>{{title}} - Customer Order</title>
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     </head>
-    <body>
-        <h1>Order Id: {{order.id}}</h1>
-        <p>Order Date: {{order.order_date}}<p>
-        <p>Customer Name: {{order.customer_name}}</p>
-        <p>Title: {{order.title}}</p>
-        <p>Artist: {{order.artist}}</p>
-        <p>Quantity: {{order.quantity}}</p>
-        <p>Price: {{order.price}}</p>
-    </body>
+    <header>
+        <h1>Order Id: {{order.id}} | Date: {{order.order_date}}</h1>
+    </header>
+        <body id="order-body">
+            <p><i>Customer Name:</i> <b>{{order.customer_name}}</b></p>
+            <p><i>Title:</i> <b>{{order.title}}</b></p>
+            <p><i>Artist:</i> <b>{{order.artist}}</b></p>
+            <p><i>Quantity:</i> <b>{{order.quantity}}</b></p>
+            <p><i>Price:</i> <b>{{order.price}}</b></p>
+        </body>
 </html>

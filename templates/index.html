@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>{{title}} - CodeClan Records: All Customer Orders</title>
+        <title>{{title}} - All Customer Orders</title>
         <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     </head>
     <body>
-    <div>
+    <div id="grid-container">
         <header>
             <h1>CodeClan Records: All Customer Orders</h1>
         </header>
@@ -12,9 +12,10 @@
         {% for order in orders %}
         <div>
             <p>
-                Order ID: {{order.id}} | Order Date: {{order.order_date}} | Revenue: {{order.price}}
+                <i>Order ID:</i> <b>{{order.id}}</b> | <i>Order Date:</i> <b>{{order.order_date}}</b> | <i>Revenue:</i> <b>{{order.price}}</b>
             </p>
-            <a href="{{ url_for('customer_order', id=order.id) }}">View Full Details</a>
+            <a id="links" href="{{ url_for('customer_order', id=order.id) }}">View Details</a>
+            <br>
         </div>
 
         {% endfor %}
