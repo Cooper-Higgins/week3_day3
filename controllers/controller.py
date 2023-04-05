@@ -8,4 +8,4 @@ def index():
 
 @app.route('/orders/<int:id>')
 def customer_order(id):
-    return render_template("order.html", title="Customer Order Full Details", order=orders[id])
+    return render_template("order.html", title="Customer Order Full Details", order=orders[id -1])
